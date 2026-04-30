@@ -1,0 +1,2 @@
+E:\code\FileEncryptor\publish\FileEncryptor.pdb
+E:\code\FileEncryptor\publish\FileEncryptor.exe
