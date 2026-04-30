@@ -316,14 +316,14 @@ public partial class MainViewModel : ObservableObject
     private string GetPasswordFromUI()
     {
         if (Application.Current.MainWindow is MainWindow mainWindow)
-            return mainWindow.PasswordBoxMain.Password;
+            return mainWindow.CachedPassword;
         return string.Empty;
     }
 
     private string GetConfirmPasswordFromUI()
     {
         if (Application.Current.MainWindow is MainWindow mainWindow)
-            return mainWindow.PasswordBoxConfirm.Password;
+            return mainWindow.CachedConfirmPassword;
         return string.Empty;
     }
 

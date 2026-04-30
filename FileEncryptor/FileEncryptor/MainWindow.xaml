@@ -116,13 +116,15 @@
                                    Foreground="{StaticResource TextSecondaryBrush}"/>
                         <PasswordBox x:Name="PasswordBoxMain"
                                      Style="{StaticResource DarkPasswordBox}"
-                                     Margin="0,0,0,10"/>
+                                     Margin="0,0,0,10"
+                                     PasswordChanged="PasswordBoxMain_PasswordChanged"/>
 
                         <TextBlock Text="确认密码" FontSize="11" Margin="0,0,0,5"
                                    Foreground="{StaticResource TextSecondaryBrush}"/>
                         <PasswordBox x:Name="PasswordBoxConfirm"
                                      Style="{StaticResource DarkPasswordBox}"
-                                     Margin="0,0,0,14"/>
+                                     Margin="0,0,0,14"
+                                     PasswordChanged="PasswordBoxConfirm_PasswordChanged"/>
 
                         <!-- 输出方式 -->
                         <TextBlock Text="输出方式" FontSize="11" Margin="0,0,0,5"

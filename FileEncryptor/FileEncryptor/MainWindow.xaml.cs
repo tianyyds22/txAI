@@ -10,6 +10,10 @@ namespace FileEncryptor;
 
 public partial class MainWindow : Window
 {
+    // 缓存密码，防止 PasswordBox 在 UI 更新时丢失状态
+    public string CachedPassword { get; private set; } = string.Empty;
+    public string CachedConfirmPassword { get; private set; } = string.Empty;
+
     // DWM Backdrop API (Windows 11 22H2+)
     private const int DWMWA_SYSTEMBACKDROP_TYPE = 38;
     private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
@@ -91,5 +95,17 @@ public partial class MainWindow : Window
         {
             vm.RemoveFileCommand.Execute(item);
         }
+    }
+
+    private void PasswordBoxMain_PasswordChanged(object sender, RoutedEventArgs e)
+    {
+        if (sender is PasswordBox pb)
+            CachedPassword = pb.Password;
+    }
+
+    private void PasswordBoxConfirm_PasswordChanged(object sender, RoutedEventArgs e)
+    {
+        if (sender is PasswordBox pb)
+            CachedConfirmPassword = pb.Password;
     }
 }
